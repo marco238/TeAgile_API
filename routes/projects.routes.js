@@ -7,10 +7,10 @@ const User = require('../models/user.model');
 
 /* GET projects listing by user's Id. */
 router.get('/:id', function(req, res, next) {
-  console.log(req.params);
   const id = req.params.id;
-  User.findById(id)
+  User.findById(id).populate('projects')
     .then(user => {
+      console.log('user: ', user);
       res.send(user.projects);
     })
     .catch(err => {
