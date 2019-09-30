@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 
 const User = require('../models/user.model');
 
-/* POST login user. */
-router.post('/', function(req, res, next) {
+/* GET login user. */
+router.get('/', function(req, res, next) {
   const email = req.query.email;
   const password = req.query.password;
   console.log('email: ', email);
