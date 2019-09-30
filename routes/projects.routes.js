@@ -10,7 +10,6 @@ router.get('/:id', function(req, res, next) {
   const id = req.params.id;
   User.findById(id).populate('projects')
     .then(user => {
-      console.log('user: ', user);
       res.send(user.projects);
     })
     .catch(err => {

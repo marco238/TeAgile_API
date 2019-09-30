@@ -13,7 +13,13 @@ const projectSchema = new mongoose.Schema({
   description: {
     type: String,
     required: [true, 'Project needs a name']
-  }
+  },
+  tasks: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Task'
+    }
+  ]
 }, { 
   timestamps: true,
   toJSON: {
