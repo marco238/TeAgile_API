@@ -21,10 +21,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  projects: {
-    type: Schema.Types.ObjectId,
-    ref: 'Project'
-  }
+  projects:[
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Project'
+    }
+  ]
 }, { 
   timestamps: true,
   toJSON: {

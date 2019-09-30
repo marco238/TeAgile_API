@@ -6,7 +6,6 @@ const User = require('../models/user.model');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  console.log('get userrr');
   User.find(function(err, users) {
     res.send(users);
   });

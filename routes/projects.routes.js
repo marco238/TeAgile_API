@@ -3,13 +3,13 @@ var router = express.Router();
 const mongoose = require('mongoose');
 
 const Project = require('../models/project.model');
+const User = require('../models/user.model');
 
 /* GET projects listing by user's Id. */
-router.get('/', function(req, res, next) {
-  console.log('get projectssss')
+router.get('/:id', function(req, res, next) {
   const id = req.params.id;
-  Project.findById(id)(function(err, projects) {
-    res.send(projects);
+  User.findById(id, function(err, user) {
+    res.send(user.projects);
   });
 });
 
