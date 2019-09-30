@@ -13,6 +13,11 @@ const taskSchema = new mongoose.Schema({
   description: {
     type: String,
     required: [true, 'Task needs a description']
+  },
+  priority: {
+    type: Number,
+    enum: [1, 2, 3, 4, 5],
+    default: 5
   }
 }, { 
   timestamps: true,
