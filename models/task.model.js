@@ -16,8 +16,8 @@ const taskSchema = new mongoose.Schema({
   },
   priority: {
     type: Number,
-    enum: [1, 2, 3, 4, 5],
-    default: 5
+    enum: [1, 2, 3, 4, 5, 6],
+    default: 6
   }
 }, { 
   timestamps: true,
